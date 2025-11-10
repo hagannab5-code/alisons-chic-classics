@@ -53,7 +53,7 @@ router.put("/:id/pay", isAuth, async (req, res) => {
     order.isPaid = true;
     order.paidAt = Date.now();
     order.payment = {
-      paymentMethod: 'paypal',
+      paymentMethod: 'mtn momo',
       paymentResult: {
         payerID: req.body.payerID,
         orderID: req.body.orderID,
