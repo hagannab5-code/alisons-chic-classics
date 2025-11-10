@@ -1,38 +1,21 @@
-.App {
-  text-align: center;
+:root {
+  --green: #2ecc71;
+  --purple: #9b59b6;
+  --white: #ffffff;
+  --shadow: 0 8px 20px rgba(0,0,0,0.1);
+  --transition: all 0.3s ease;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+body { font-family: 'Poppins', sans-serif; background: var(--white); color: #333; }
+header { background: linear-gradient(135deg, var(--purple), var(--green)); color: var(--white); padding: 1rem; }
+.product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.5rem; padding: 2rem; }
+.product-card { background: var(--white); border-radius: 12px; box-shadow: var(--shadow); transition: var(--transition); cursor: pointer; }
+.product-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.12); }
+.btn { background: var(--green); color: var(--white); padding: 0.8rem 2rem; border: none; border-radius: 50px; cursor: pointer; transition: var(--transition); }
+.btn:hover { background: #27ae60; transform: translateY(-2px); }
+.btn-purple { background: var(--purple); }
+.btn-purple:hover { background: #8e44ad; }
+.options { display: flex; gap: 0.5rem; flex-wrap: wrap; padding: 1rem; }
+.size-btn, .color-swatch { padding: 0.4rem 0.8rem; border: 1px solid #ddd; border-radius: 8px; cursor: pointer; transition: var(--transition); font-size: 0.85rem; }
+.size-btn.active, .color-swatch.active { background: var(--purple); color: var(--white); border-color: var(--purple); }
+.color-swatch { width: 30px; height: 30px; border-radius: 50%; padding: 0; display: flex; align-items: center; justify-content: center; }
+@media (max-width: 768px) { .product-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); } }
